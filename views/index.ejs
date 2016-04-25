@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+	<!-- bootswatch DARKLY -->
+    <link rel="stylesheet" href="https://bootswatch.com/journal/bootstrap.min.css">
+    
+	<!-- bootstrap JS CDNs-->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+
+   
+
+   
+    <title>Grade Tracker</title>
+
+</head>
+
+<body>
+	
+
+	<div class="wrapper">
+		<h1>Grade Tracker</h1>
+		
+		<form action="/api/grades"  method="post">
+			
+			Name:<input type="text" name="name" id="name">
+			Assignment:<input type="text"  name="assignment" id="assignment">
+			Score:<input type="text" name="score" id="score">
+			Total:<input type="text" name="total" id="total">
+			Letter:<input type="text" name="letter" id="letter">
+			<input type="submit" value="Enter">
+
+		</form>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Score</th>
+					<th>Total</th>
+					<th>Letter</th>
+				</tr>
+			</thead>
+			<tbody>
+<% for(var i = 0; i < grades.length; i++) { %>
+					<tr>
+						<td> <%= grades[i].name %>  </td>
+						<td> <%= grades[i].score %>  </td>
+						<td> <%= grades[i].total %>  </td>
+						<td> <%= grades[i].letter %>  </td>
+					</tr>
+<% } %>
+			</tbody>
+
+		</table>
+	</form>	
+
+	</div>
+	
+	<!-- js file -->
+	<!--<script type="text/javascript" src="./index.js" ></script>-->
+
+
+</body>
+
+
+</closehtml>
